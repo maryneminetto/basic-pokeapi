@@ -1,0 +1,21 @@
+{
+    "name": "maryne/basic-pokeapi",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Maryne\\BasicPokeapi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Maryne Minetto",
+            "email": "maryne.minetto@live.fr"
+        }
+    ],
+    "require": {
+        "symfony/http-client": "^5.3",
+        "ext-http": "*",
+      "ext-json": "*"
+    }
+}
