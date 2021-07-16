@@ -20,11 +20,12 @@ class Pokedex
         $this->client = HttpClient::createForBaseUri('https://pokeapi.co/api/v2/');
     }
 
-    public function getAllPokemon(int $offset = 0): array
+    public function getAllPokemon(int $offset = 0, int $limit = 50): array
     {
         $response = $this->client->request('GET', 'pokemon', [
             'query' => [
                 'offset' => $offset,
+                'limit' => $limit
             ],
         ]);
 
@@ -56,7 +57,7 @@ class Pokedex
 
             $nextOffset = $matches[1];
 
-            $nextPokemons = $this->getAllPokemon($nextOffset);
+            $nextPokemons = $this->getAllPokemon($nextOffset, $limit);
 
             $pokemons = array_merge($pokemons, $nextPokemons);
         }

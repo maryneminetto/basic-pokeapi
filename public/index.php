@@ -6,4 +6,4 @@ $pokedex = new \Maryne\BasicPokeapi\Pokedex();
 
 header('Content-type: application/json');
 
-echo json_encode($pokedex->getAllPokemon(0));
+echo json_encode($pokedex->getAllPokemon(0, 100));
